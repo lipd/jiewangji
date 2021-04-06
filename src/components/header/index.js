@@ -4,8 +4,8 @@ import styled from '@emotion/styled'
 import { fontFamily } from '../styles'
 import { Link } from 'gatsby'
 import Hamburger from './hamburger'
-import logo from '../assets/svg/logo.svg'
-import logoLight from '../assets/svg/logo-light.svg'
+import logo from '../assets/png/logo.png'
+import logoLight from '../assets/png/logo-light.png'
 import githubIcon from '../assets/svg/github.svg'
 import githubIconLight from '../assets/svg/github-light.svg'
 import wechatIcon from '../assets/svg/wechat.svg'
@@ -65,6 +65,11 @@ const NavLink = styled(Link)`
     margin-right: ${(props) => props.margin};
     font-family: ${fontFamily.kaiti};
     font-weight: bold;
+
+    .brand-text {
+      position: relative;
+      top: -2px;
+    }
   }
 
   img {
@@ -151,10 +156,10 @@ const Header = ({ position = 'static', light = false, doc = false }) => {
               height: 38px;
               width: 38px;
             `}
-            src={light ? logoLight : logo}
+            src={light ? logo : logoLight}
             alt="logo"
           />
-          结网集
+          <span className="brand-text">结网集</span>
         </NavLink>
         <div
           css={css`
@@ -163,9 +168,9 @@ const Header = ({ position = 'static', light = false, doc = false }) => {
             }
           `}
         >
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about/">About</NavLink>
-          <NavLink to="/contact/">Contact</NavLink>
+          <NavLink to="/">首页</NavLink>
+          <NavLink to="/about/">关于</NavLink>
+          <NavLink to="/contact/">联系方式</NavLink>
         </div>
         <BurgerWrapper>
           <Hamburger
@@ -176,13 +181,13 @@ const Header = ({ position = 'static', light = false, doc = false }) => {
         </BurgerWrapper>
         <Menu className={`${toggle ? '' : 'close'}`}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">首页</NavLink>
           </li>
           <li>
-            <NavLink to="/author/">About</NavLink>
+            <NavLink to="/about/">关于</NavLink>
           </li>
           <li>
-            <NavLink to="/contact/">Contact</NavLink>
+            <NavLink to="/contact/">联系方式</NavLink>
           </li>
           <li>
             <div
@@ -190,7 +195,7 @@ const Header = ({ position = 'static', light = false, doc = false }) => {
                 display: flex;
               `}
             >
-              <NavIcon src={wechatIcon} alt="微信公众号" to="/" />
+              <NavIcon src={wechatIcon} alt="微信公众号" to="/wx-mp" />
               <NavIcon
                 src={zhihuIcon}
                 alt="知乎"
