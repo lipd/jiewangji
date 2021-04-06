@@ -54,6 +54,10 @@ const Article = styled('article')`
       padding: 0 2rem;
     }
 
+    img {
+      width: 100%;
+    }
+
     h1,
     h2,
     h3,

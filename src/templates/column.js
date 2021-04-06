@@ -84,6 +84,10 @@ const Article = styled('div')`
     margin: 0 1.5rem;
   }
 
+  img {
+    width: 100%;
+  }
+
   h1.title {
     margin-top: 0;
   }
